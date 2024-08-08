@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
 import { useState } from 'react'
 
-export default function UserBubble() {
+export default function AIBubble() {
     const [message, setMessage] = useState('')
 
     return(
