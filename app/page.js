@@ -1,5 +1,7 @@
+import Chatbox from './components/Chatbox'
+
 export default function Home() {
   return (
-    <h1>Hi</h1>
+    <Chatbox/>
   );
 }
