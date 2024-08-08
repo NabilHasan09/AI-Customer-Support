@@ -2,7 +2,6 @@
   "name": "ai-customer-support",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,7 +16,7 @@
     "@mui/icons-material": "^5.16.6",
     "@mui/material": "^5.16.6",
     "firebase": "^10.12.5",
-    "next": "^14.2.5",
+    "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
