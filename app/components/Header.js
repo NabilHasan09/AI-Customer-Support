@@ -1,5 +1,5 @@
 "use client"
-import { AppBar, Typography, IconButton, Toolbar, Drawer, Button, Box } from '@mui/material'
+import { AppBar, Typography, IconButton, Toolbar, Drawer, Box } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
 import Link from '@mui/material/Link'
