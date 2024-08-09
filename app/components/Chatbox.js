@@ -4,9 +4,29 @@ import SendIcon from '@mui/icons-material/Send';
 import { useState, useEffect } from 'react'
 import UserBubble from './UserBubble'
 import AIBubble from './AIBubble'
+import { POST } from '../api/chat/route'
 
 export default function Chatbox() {
     const [prompt, setPrompt] = useState('')
+    const [aiMessage, setAiMessage] = useState('')
+    const [messages, setMessages] = useState([])
+
+    const handleSend = async () => {
+        const res = await POST(prompt)
+        console.log(res)
+        setAiMessage(res)
+        
+        setMessages((message) => [...message, { role: 'user', text: prompt }])
+        setMessages((message) => [...message, { role: 'ai', text: res }])
+        setPrompt('')
+    }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // Prevent new line in the text field
+            handleSend();
+        }
+    }
 
     return(
         <Box
@@ -21,13 +41,20 @@ export default function Chatbox() {
             width="100%"
             maxWidth="1000px"
             sx={{
-                marginBottom: "20px"
+                marginBottom: "20px",
+                overflow: 'auto'
             }}
             >
                 <Stack>
-                    <UserBubble/>
-                    <AIBubble/>
+                    {messages.map((message, index) => (
+                        message.role === 'user' ? (
+                            <UserBubble key={index} data={message.text} />
+                        ) : message.role === 'ai' ? (
+                            <AIBubble key={index} data={message.text} />
+                        ) : null
+                    ))}
                 </Stack>
+
             </Box>
 
             <Box
@@ -37,23 +64,29 @@ export default function Chatbox() {
             alignItems="center"
             marginBottom={3}
             width="100%"
-            maxWidth="600px"
+            maxWidth="950px"
             >
                 <TextField
                 placeholder="Ask TeslaGuideAI..."
                 fullWidth
+                value={prompt}
+                autoComplete='off'
                 sx={{
                     "& fieldset": {
                         border: "none"
-                    }
+                    },
+                    paddingLeft: "20px"
                 }}
                 onChange={(e) => setPrompt(e.target.value)}
+                onKeyDown={handleKeyDown}
                 />  
                     <IconButton 
-                    //insert function to handle submit to AI chat generation
+                        onClick={() => {
+                            handleSend();
+                        }}
                     >
                         <SendIcon
-                        sx={{ margin: "5px" }}
+                        sx={{ color: "red", margin: "5px" }}
                         />
                     </IconButton>
             </Box>
