@@ -1,7 +1,7 @@
 import { model } from '@/gemini';
 import { NextResponse } from 'next/server'
 
-let conversationHistory = [];//conversation history 
+let conversationHistory = []; //conversation history 
 
   
   export async function POST(req) {
@@ -13,7 +13,7 @@ let conversationHistory = [];//conversation history
       responseMimeType: "text/plain",
     };
   
-    const userInput = await req.text() // Get user input from the request body
+    const userInput = req // Get user input from the request body
   
     async function run() {
       // Add the new user input to the conversation history
@@ -31,22 +31,20 @@ let conversationHistory = [];//conversation history
       const result = await chatSession.sendMessage(userInput);
   
       // Get the model's response
-      const modelResponse = await result.response.text();
+      const modelResponse = result.response.text();
   
       // Add the model's response to the conversation history
       conversationHistory.push({
         role: "model",
         parts: [{ text: modelResponse }],
       });
-  
-      console.log(modelResponse);
+    
   
       // Return the model's response
       return modelResponse;
     }
   
     const text = await run();
-  
-    return NextResponse.json({text}); 
-    // Return the response as JSON
+    
+    return text
   }

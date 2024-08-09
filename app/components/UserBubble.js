@@ -2,8 +2,7 @@ import { Box, Typography } from '@mui/material'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { useState } from 'react'
 
-export default function UserBubble() {
-    const [message, setMessage] = useState('')
+export default function UserBubble({ data }) {
 
     return(
         <Box
@@ -20,11 +19,12 @@ export default function UserBubble() {
                 <Typography
                 color="white"
                 >
-                    Give me some information about Tesla cars
+                    {data}
                 </Typography>
             </Box>
             <AccountCircleOutlinedIcon
             sx={{
+                color: "red",
                 fontSize: "28px"
             }}
             />

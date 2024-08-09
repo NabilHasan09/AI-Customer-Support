@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material'
 import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
 import { useState } from 'react'
+import Markdown from 'react-markdown'
 
-export default function AIBubble() {
-    const [message, setMessage] = useState('')
+export default function AIBubble({ data }) {
 
     return(
         <Box
@@ -20,7 +20,7 @@ export default function AIBubble() {
             }}
             />
             <Box
-            maxWidth="400px"
+            maxWidth="550px"
             display="flex"
             alignSelf="start"
             p={2}
@@ -29,7 +29,7 @@ export default function AIBubble() {
                 <Typography
                 color="black"
                 >
-                    Give me some information about Tesla cars
+                    <Markdown>{data}</Markdown>
                 </Typography>
             </Box>
         </Box>
