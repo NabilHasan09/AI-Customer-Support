@@ -1,11 +1,11 @@
 import { Box, Button, Link, TextField, Typography, Stack } from '@mui/material';
 
-export default function SignUpForm({ username, setUsername, email, setEmail, password, setPassword, handleSignUp, error }) {
+export default function SignUpForm({ username, setUsername, email, setEmail, password, setPassword, error, handleSignUp }) {
     return (
         <Box width={'100vw'} height={'100vh'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
             <Box sx={{
                 width: '30%',
-                height: '65%',
+                height: '70%',
                 bgcolor: 'white',
                 p: 4,
                 mt: 8,
@@ -41,6 +41,7 @@ export default function SignUpForm({ username, setUsername, email, setEmail, pas
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
+                        {error && <Typography color="error">{error}</Typography>}
                         <Button type="submit" variant="contained" fullWidth
                             sx={{
                                 bgcolor: 'red',

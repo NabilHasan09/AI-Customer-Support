@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase";
+import { auth, errorMessages } from "@/firebase";
 import SignInForm from "@/app/components/SignInForm";
 
 export default function SignIn() {
@@ -16,7 +16,7 @@ export default function SignIn() {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
         }
         catch (error) {
-            setError('That account does not exist*');
+            setError(errorMessages[error.code]);
             console.log(error);
         }
         setEmail('');
