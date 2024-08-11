@@ -1,7 +1,7 @@
 "use client" 
 import { Box, TextField, IconButton, Stack } from  '@mui/material' 
 import SendIcon from '@mui/icons-material/Send';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import UserBubble from './UserBubble'
 import AIBubble from './AIBubble'
 import { POST } from '../api/chat/route'
@@ -10,6 +10,7 @@ export default function Chatbox() {
     const [prompt, setPrompt] = useState('')
     const [aiMessage, setAiMessage] = useState('')
     const [messages, setMessages] = useState([])
+    const messageEndRef = useRef(null)
 
     const handleSend = async () => {
         const res = await POST(prompt)
@@ -27,6 +28,14 @@ export default function Chatbox() {
             handleSend();
         }
     }
+
+    const scrollToBottom = () => {
+        messageEndRef.current?.scrollIntoView({ behavior: 'smooth'});
+    };
+
+    useEffect (() =>{
+        scrollToBottom();
+    }, [messages]);
 
     return(
         <Box
@@ -53,6 +62,7 @@ export default function Chatbox() {
                             <AIBubble key={index} data={message.text} />
                         ) : null
                     ))}
+                    <div ref={messageEndRef} />
                 </Stack>
 
             </Box>
