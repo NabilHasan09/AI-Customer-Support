@@ -1,37 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Topic: AI Customer Support App
 
-## Getting Started
+Created a full-stack chatbot application where users can ask relevant information about Tesla vehicles.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Next.js, React, HTML, JavaScript, Material UI, Google Gemini, Firebase Authentication
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Achievements
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# AI-Customer-Support
+- Imeplmented AI responses using Google Gemini 1.5 Flash model.
+- Learned how to fine-tune AI responses tailored for solely Tesla vehicle related information.
+- Created a clean and functional user interface using Material UI
+- Deployed Firebase Authentcation to require an account before access.
+- Acquired knowledge for working as a team of 3 using Git.
