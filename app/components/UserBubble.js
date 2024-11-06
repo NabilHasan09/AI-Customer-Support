@@ -14,7 +14,7 @@ export default function UserBubble({ data }) {
             display="flex"
             alignSelf="flex-end"
             p={2}
-            sx={{ backgroundColor: "red", borderRadius: "30px", px: "20px", marginRight: "10px"}}
+            sx={{ backgroundColor: "black", borderRadius: "30px", px: "20px", marginRight: "10px"}}
             >
                 <Typography
                 color="white"
@@ -24,7 +24,7 @@ export default function UserBubble({ data }) {
             </Box>
             <AccountCircleOutlinedIcon
             sx={{
-                color: "red",
+                color: "black",
                 fontSize: "28px"
             }}
             />

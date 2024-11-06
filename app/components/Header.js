@@ -20,10 +20,19 @@ export default function Header() {
 
     return (
         <Box>
-            <AppBar sx={{ backgroundColor: "red"}}>
+            <AppBar sx={{ backgroundColor: "#659BDF"}}>
                 <Box display={'flex'} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'}>
-                    <Typography sx={{ml: '20px'}}>
-                        TeslaGuideAI
+                    <Typography sx={{
+                        ml: '20px', 
+                        textShadow: 
+                        `
+                        -1px -1px 0 black,
+                        1px -1px 0 black,
+                        -1px 1px 0 black,
+                        1px 1px 0 black
+                        `,
+                    }}>
+                        Fund-Amental$
                     </Typography>
                     <IconButton size="large" color="inherit" onClick={handleOpenDrawer} sx={{mr: '10px'}}>
                         <MenuIcon/>
@@ -32,12 +41,12 @@ export default function Header() {
             </AppBar>
             <Drawer anchor="right" open={isOpen} onClose={handleCloseDrawer}>   
                 <Box display="flex" flexDirection="column" alignItems="space-between" justifyContent='space-between' height={'100vw'}>
-                    <Typography p={2} sx={{ fontWeight: "bold", fontSize: "30px", color: "red" }}>TeslaGuideAI</Typography>
+                    <Typography p={2} sx={{ fontWeight: "bold", fontSize: "30px", color: "#659BDF" }}>Fund-Amental$</Typography>
                     <Button onClick= {() => {
                         signOut(auth)
                         handleCloseDrawer()
                     }}>
-                        <Link underline='true' sx={{ fontWeight: "bold",fontSize: "25px", color: "red" }}>Sign Out</Link>
+                        <Link underline='true' sx={{ fontWeight: "bold",fontSize: "25px", color: "Blue" }}></Link>
                     </Button>
                 </Box>
             </Drawer>

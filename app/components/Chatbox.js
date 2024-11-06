@@ -68,7 +68,7 @@ export default function Chatbox() {
             </Box>
 
             <Box
-            border="1px solid red"
+            border="1px solid #659BDF   "
             borderRadius="30px"
             display="flex"
             alignItems="center"
@@ -77,7 +77,7 @@ export default function Chatbox() {
             maxWidth="950px"
             >
                 <TextField
-                placeholder="Ask TeslaGuideAI..."
+                placeholder="Ask Fund$..."
                 fullWidth
                 value={prompt}
                 autoComplete='off'
@@ -96,7 +96,7 @@ export default function Chatbox() {
                         }}
                     >
                         <SendIcon
-                        sx={{ color: "red", margin: "5px" }}
+                        sx={{ color: "659BDF", margin: "5px" }}
                         />
                     </IconButton>
             </Box>
