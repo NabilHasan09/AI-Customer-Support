@@ -1,6 +1,6 @@
 ## Topic: AI Customer Support App
 
-Created a full-stack chatbot application where users can ask relevant information about Tesla vehicles.
+Created a full-stack chatbot application where users can ask relevant information about Financial Literacy (FUNDAMENTALS).
 
 ## Tech Stack
 
