@@ -9,7 +9,7 @@ Next.js, React, HTML, JavaScript, Material UI, Google Gemini, Firebase Authentic
 ## Achievements
 
 - Imeplmented AI responses using Google Gemini 1.5 Flash model.
-- Learned how to fine-tune AI responses tailored for solely Tesla vehicle related information.
+- Learned how to fine-tune AI responses tailored for solely Financial Literacy Content related information.
 - Created a clean and functional user interface using Material UI
 - Deployed Firebase Authentcation to require an account before access.
 - Acquired knowledge for working as a team of 3 using Git.
